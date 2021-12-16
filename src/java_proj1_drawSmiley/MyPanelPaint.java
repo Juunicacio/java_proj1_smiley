@@ -19,5 +19,22 @@ public class MyPanelPaint extends JPanel{
 		g.setColor(Color.yellow);
 		g.fillOval(100, 100, 50, 50);
 		System.out.println("just got executed!");
+		
+		// draw the mouth
+		g2.setStroke(new BasicStroke(1));
+		g.setColor(Color.black);
+		g.drawOval(110, 110, 30, 30);
+		
+		g2.setStroke(new BasicStroke(2));
+		g.setColor(Color.yellow);
+		//g.drawRect(107, 110, 36, 20);
+		g.fillRect(107, 110, 36, 20);
+		
+		
+		// draw the eyes
+		g.setColor(Color.black);
+		g.fillOval(115,115,5,5);		
+		g.setColor(Color.black);
+		g.fillOval(130,115,5,5);
 	}
 }

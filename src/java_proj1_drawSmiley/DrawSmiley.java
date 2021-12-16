@@ -12,7 +12,6 @@ public class DrawSmiley {
 		int HEIGHT = 400;
 		MyPanelPaint myPainting = new MyPanelPaint();
 		MyFrameWin win = new MyFrameWin(myPainting, myWinTitle, WIDTH, HEIGHT);
-
 	}
 
 }
