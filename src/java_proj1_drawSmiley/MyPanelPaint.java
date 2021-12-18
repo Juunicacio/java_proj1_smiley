@@ -10,38 +10,43 @@ import javax.swing.JPanel;
 public class MyPanelPaint extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public void paintComponent(Graphics g) {
+		int x, y;
+		int scale;
+		x = 100;
+		y = 100;
+		scale = 2;
 		Graphics2D g2 = (Graphics2D) g;
 		// draw circle
-		drawOutline(g, g2);
-		drawMouth(g,g2);
-		drawEyes(g);
+		drawOutline(g, g2, x, y, scale);
+		drawMouth(g,g2, x, y, scale);
+		drawEyes(g, x, y, scale);
 	}
 	
-	static void drawOutline(Graphics g, Graphics2D g2) {
+	static void drawOutline(Graphics g, Graphics2D g2, int x, int y, int scale) {
 		// stroke draw of the circle
 		g2.setStroke(new BasicStroke(2));
 		g.setColor(Color.black);
-		g.drawOval(100, 100, 50, 50);
+		g.drawOval(x, y, 50*scale, 50*scale);
 		g.setColor(Color.yellow);
-		g.fillOval(100, 100, 50, 50);
+		g.fillOval(x, y, 50*scale, 50*scale);
 		System.out.println("just got executed!");				
 	}
-	static void drawMouth(Graphics g, Graphics2D g2) {
+	static void drawMouth(Graphics g, Graphics2D g2, int x, int y, int scale) {
 		// draw the mouth
 		g2.setStroke(new BasicStroke(1));
 		g.setColor(Color.black);
-		g.drawOval(110, 110, 30, 30);
+		g.drawOval(x + 10*scale, y + 10*scale, 30*scale, 30*scale);
 		// rectangle to cover circle of mouth
 		g2.setStroke(new BasicStroke(2));
 		g.setColor(Color.yellow);
-		g.fillRect(107, 110, 36, 20);		
+		g.fillRect(x + 7*scale, y + 10*scale, 36*scale, 20*scale);		
 	}
-	static void drawEyes(Graphics g) {
+	static void drawEyes(Graphics g, int x, int y, int scale) {
 		// draw the eyes
 		g.setColor(Color.black);
-		g.fillOval(115,115,5,5);		
+		g.fillOval(x + 15*scale, y + 15*scale, 5*scale,5*scale);		
 		g.setColor(Color.black);
-		g.fillOval(130,115,5,5);		
+		g.fillOval(x + 30*scale, y + 15*scale, 5*scale,5*scale);		
 	}
 	
 	
