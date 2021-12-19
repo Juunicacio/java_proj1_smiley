@@ -9,17 +9,37 @@ import javax.swing.JPanel;
 
 public class MyPanelPaint extends JPanel{
 	private static final long serialVersionUID = 1L;
+	private int x;
+	private int y;
+	private int scale;
+	
+	// Default constructor
+	public MyPanelPaint() {
+		// we must define the default values
+		this.x = 100;
+		this.y = 100;
+		this.scale = 2;
+	}
+	
+	// Parameterized constructor
+	public MyPanelPaint(int x, int y, int scale) {
+		// the arguments are used as values
+		this.x = x;
+		this.y = y;
+		this.scale = scale;
+	}
+	
 	public void paintComponent(Graphics g) {
-		int x, y;
-		int scale;
-		x = 100;
-		y = 100;
-		scale = 2;
+		//int x, y;
+		//int scale;
+		//x = 100;
+		//y = 100;
+		//scale = 2;
 		Graphics2D g2 = (Graphics2D) g;
 		// draw circle
-		drawOutline(g, g2, x, y, scale);
-		drawMouth(g,g2, x, y, scale);
-		drawEyes(g, x, y, scale);
+		drawOutline(g, g2, this.x, this.y, this.scale);
+		drawMouth(g,g2, this.x, this.y, this.scale);
+		drawEyes(g, this.x, this.y, this.scale);
 	}
 	
 	static void drawOutline(Graphics g, Graphics2D g2, int x, int y, int scale) {

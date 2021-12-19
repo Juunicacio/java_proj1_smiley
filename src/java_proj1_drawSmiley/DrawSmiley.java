@@ -10,7 +10,9 @@ public class DrawSmiley {
 		String myWinTitle = "Test Title";
 		int WIDTH = 400;
 		int HEIGHT = 400;
-		MyPanelPaint myPainting = new MyPanelPaint();
+		// use the code below to use the default values of the class
+		//MyPanelPaint myPainting = new MyPanelPaint();
+		MyPanelPaint myPainting = new MyPanelPaint(100,100,4);
 		MyFrameWin win = new MyFrameWin(myPainting, myWinTitle, WIDTH, HEIGHT);
 	}
 
