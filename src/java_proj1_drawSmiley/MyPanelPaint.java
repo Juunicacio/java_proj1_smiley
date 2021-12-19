@@ -43,7 +43,10 @@ public class MyPanelPaint extends JPanel{
 		drawOutline(g, g2, this.x, this.y, this.scale);
 		drawMouth(g,g2, this.x, this.y, this.scale);
 		drawEyes(g, this.x, this.y, this.scale);
-		System.out.println("Event: " + this.event);
+		if(this.event != null) {
+			System.out.println("Event: " + this.event);
+		}
+		
 	}
 	
 	static void drawOutline(Graphics g, Graphics2D g2, int x, int y, int scale) {
