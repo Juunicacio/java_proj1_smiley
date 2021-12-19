@@ -12,7 +12,10 @@ public class DrawSmiley {
 		int HEIGHT = 400;
 		// use the code below to use the default values of the class
 		//MyPanelPaint myPainting = new MyPanelPaint();
+		// use the code belos to set the values
 		MyPanelPaint myPainting = new MyPanelPaint(100,100,4);
+		// use the code below to set values and add an event
+		//MyPanelPaint myPainting = new MyPanelPaint(100, 100, 5, "I'm bigger");
 		MyFrameWin win = new MyFrameWin(myPainting, myWinTitle, WIDTH, HEIGHT);
 	}
 

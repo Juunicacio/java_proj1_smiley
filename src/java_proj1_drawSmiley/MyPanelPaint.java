@@ -12,6 +12,7 @@ public class MyPanelPaint extends JPanel{
 	private int x;
 	private int y;
 	private int scale;
+	private String event;
 	
 	// Default constructor
 	public MyPanelPaint() {
@@ -29,17 +30,20 @@ public class MyPanelPaint extends JPanel{
 		this.scale = scale;
 	}
 	
+	// Calling a constructor from a constructor
+	// Parameterized constructor
+	public MyPanelPaint(int x, int y, int scale, String event) {
+		this(x, y, scale); // calling the constructor
+		this.event = event;
+	}	
+	
 	public void paintComponent(Graphics g) {
-		//int x, y;
-		//int scale;
-		//x = 100;
-		//y = 100;
-		//scale = 2;
 		Graphics2D g2 = (Graphics2D) g;
 		// draw circle
 		drawOutline(g, g2, this.x, this.y, this.scale);
 		drawMouth(g,g2, this.x, this.y, this.scale);
 		drawEyes(g, this.x, this.y, this.scale);
+		System.out.println("Event: " + this.event);
 	}
 	
 	static void drawOutline(Graphics g, Graphics2D g2, int x, int y, int scale) {
@@ -49,7 +53,7 @@ public class MyPanelPaint extends JPanel{
 		g.drawOval(x, y, 50*scale, 50*scale);
 		g.setColor(Color.yellow);
 		g.fillOval(x, y, 50*scale, 50*scale);
-		System.out.println("just got executed!");				
+		System.out.println("just got executed!");		
 	}
 	static void drawMouth(Graphics g, Graphics2D g2, int x, int y, int scale) {
 		// draw the mouth
